@@ -16,7 +16,7 @@ import javax.swing.JTextField;
  *
  * @author shukur
  */
-public class AddTaskFrame extends JFrame{
+public class AddTaskFrame extends JFrame {
     private JTextField textField;
     private JLabel label;
     
@@ -29,7 +29,8 @@ public class AddTaskFrame extends JFrame{
     
     textField.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e) {
-         //  taskName = textField.getSource();
+             String input = textField.getText();
+             
         }
         
     });

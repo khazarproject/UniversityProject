@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  *
  * @author shukur
  */
-public class ToolBar extends JPanel{
+public class ToolBar extends JPanel {
     
     private JButton addTaskButton;
     private JButton DeleteTaskButton;

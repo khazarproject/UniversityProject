@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  *
  * @author shukur
  */
-public class TaskPanel extends JPanel{
+public class TaskPanel extends JPanel {
     
     private JCheckBox btn1;
     private JCheckBox btn2;
@@ -27,13 +27,13 @@ public class TaskPanel extends JPanel{
     private JCheckBox btn8;
     private JCheckBox btn9;
     private JCheckBox btn10;
-    public String taskName;
+
     
     public TaskPanel(){
         
         setLayout(new GridLayout(0,1,10,3));
         
-        btn1 = new JCheckBox(taskName);
+        btn1 = new JCheckBox();
         btn2 = new JCheckBox();
         btn3 = new JCheckBox();
         btn4 = new JCheckBox();
