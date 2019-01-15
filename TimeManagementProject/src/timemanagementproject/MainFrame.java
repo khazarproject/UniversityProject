@@ -6,6 +6,7 @@
 package timemanagementproject;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -24,7 +25,12 @@ import javax.swing.JTextField;
  */
 public class MainFrame extends JFrame{
     
-    private JFrame frame = new JFrame();;
+    public int WIDTH = 800;
+    public int HEIGHT = 400;
+    
+    private JFrame frame = new JFrame();
+    private JFrame taskFrame = new JFrame();
+    private JFrame taskDetailsFrame1 = new JFrame();
     
     private JPanel taskPanel = new JPanel(); 
     private JCheckBox btn1;
@@ -50,17 +56,19 @@ public class MainFrame extends JFrame{
     private JTextField textField;
     private JLabel taskNameLabel;
     
-    public MainFrame(){      
+    public MainFrame(){
      
      // setting layouts
      frame.setLayout(new BorderLayout());
      taskPanel.setLayout(new GridLayout(0,1,10,3));
      toolBar.setLayout(new GridLayout(1,0,20,0));  
      addTaskFrame.setLayout(new FlowLayout());
+     taskFrame.setLayout(new BorderLayout());
      
      //creating referances
      btn1 = new JCheckBox();
      btn1.setVisible(false);
+     if (btn1.isSelected()){ taskDetailsFrame1.setVisible(true); }
      btn2 = new JCheckBox();
      btn2.setVisible(false);
      btn3 = new JCheckBox();
@@ -82,7 +90,8 @@ public class MainFrame extends JFrame{
      addTaskButton = new JButton("Add Task");
      DeleteTaskButton = new JButton("Delete Task");
      label1 = new JLabel(""); 
-     label2 = new JLabel(""); 
+     label2 = new JLabel("");
+     
      
      textField = new JTextField(30);
      taskNameLabel = new JLabel("Task name:");
@@ -104,64 +113,85 @@ public class MainFrame extends JFrame{
                  btn1.setLabel(input);
                 btn1.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 35, 770, 35);
             }else if(count==2){
                 btn2.setLabel(input);
                 btn2.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 70, 770, 70);
+                 
             }
              else if(count==3){
                  btn3.setLabel(input);
                 btn3.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 103, 770, 103);
+                 
             }
              else if(count==4){
                  btn4.setLabel(input);
                 btn4.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 138, 770, 138);
+                 
             }
              else if(count==5){
                  btn5.setLabel(input);
                 btn5.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 172, 770, 172);
+                 
             }
              else if(count==6){
                  btn6.setLabel(input);
                 btn6.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 205, 770, 205);
+                 
             }
              else if(count==7){
                  btn7.setLabel(input);
                 btn7.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 240, 770, 240);
+                 
             }
              else if(count==8){
                  btn8.setLabel(input);
                 btn8.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 273, 770, 273);
+                
             }
              else if(count==9){
                  btn9.setLabel(input);
                 btn9.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 307, 770, 307);
+                 
             }
              else if(count==10){
                  btn10.setLabel(input);
                 btn10.setVisible(true);
                 count++;
+                g.setColor(Color.GRAY);
                 g.drawLine(20, 307, 770, 307);
+                 
             }
             addTaskFrame.setVisible(false);
              
         }
+        
+        //btn1.addActionListener( new )
         
     });
      
@@ -186,13 +216,14 @@ public class MainFrame extends JFrame{
      
      frame.setTitle("Time manageme app");
      frame.setVisible(true);
+     frame.setResizable(false);
      frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-     frame.setSize(800,400);
-     //frame.setResizable(false);
+     frame.setSize(WIDTH,HEIGHT);
+     frame.pack();
      frame.setLocation(300, 250);
      
      addTaskFrame.setTitle("Add task");
-     addTaskFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+     addTaskFrame.setDefaultCloseOperation(HIDE_ON_CLOSE);
      addTaskFrame.setSize(400,80);
      addTaskFrame.setVisible(false);
      addTaskFrame.setLocation(300, 520);
